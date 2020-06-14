@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: deps-{{checksum "requirements.lock"}}
+          key: deps-{{ checksum "requirements.lock" }}
       - run:
           command: |
             pip install --user -r requirements.lock
@@ -17,7 +17,7 @@ jobs:
 test:
     docker:
       - image: circleci/python:3.8.0
-     steps:
+    steps:
         - checkout
         - restore_cache:
             key: deps-{{ checksum "requirements.lock" }}
