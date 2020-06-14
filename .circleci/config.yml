@@ -1,7 +1,7 @@
 version: 2
-build:
 jobs:
-  setup_dependencies:
+  build:
+    setup_dependencies:
     docker:
       - image: circleci/python:3.8.0
     steps:
